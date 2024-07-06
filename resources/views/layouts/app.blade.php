@@ -1,5 +1,3 @@
-<!-- resources/views/layouts/app.blade.php -->
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -11,18 +9,26 @@
     <meta name="author" content="" />
     <title>Dashboard - SB Admin</title>
     <link href="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/style.min.css" rel="stylesheet" />
-    <link href="{{ asset('css/styles.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/styles.css') }}" rel="stylesheet" />
     <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
 </head>
 
 <body class="sb-nav-fixed">
+    <!-- Navbar -->
     @include('partials.navbar')
+
     <div id="layoutSidenav">
-        @include('partials.sidebar')
+        <div id="layoutSidenav_nav">
+            <!-- Sidebar -->
+            @include('partials.sidebar')
+        </div>
         <div id="layoutSidenav_content">
             <main>
-                @yield('content')
+                <div class="container-fluid px-4">
+                    @yield('content')
+                </div>
             </main>
+            <!-- Footer -->
             @include('partials.footer')
         </div>
     </div>
